@@ -35,14 +35,16 @@ for ARG in $*; do
   esac
 done
 
-function rundocker() {
+## this is not meant to be executed as a function, simply copy paste the body commands.
+function dontExecute() {
   docker run -v /Users/sam/dev/react-ssr-boilerplate:/working -it --rm ubuntu
-  apt-get update
-  apt-get install npm
-  apt-get install awscli
-  apt-get install git
-  cd /working/
-  rm -rf node_modules/
-  npm run setup
-  npm run package-deploy
+  apt-get update && \
+  apt-get install npm && \
+  apt-get install awscli && \
+  apt-get install git && \
+  apt-get install vim && \
+  cd /working/ && \
+  #rm -rf node_modules/ && \
+  npm run setup && \
+  #npm run package-deploy
 }

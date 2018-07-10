@@ -17,6 +17,8 @@ const isDev = !isProd;
 const PORT = process.env.PORT || 8080;
 let serverStarted = process.env.AWS_EXECUTION_ENV || false;
 
+console.log(`AWS Execution Env: ${process.env.AWS_EXECUTION_ENV}`);
+
 const done = () => {
 	!serverStarted &&
 		server.listen(PORT, () => {
