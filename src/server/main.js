@@ -1,2 +1,4 @@
 require('babel-register');
-require('./express');
+const server = require('./express');
+
+module.exports = server;

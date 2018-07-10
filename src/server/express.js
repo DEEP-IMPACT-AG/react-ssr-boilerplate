@@ -13,12 +13,12 @@ import configProdServer from '../../config/webpack.prod-server.js';
 const isProd = process.env.NODE_ENV === 'production';
 const isDev = !isProd;
 const PORT = process.env.PORT || 8080;
-let isBuilt = false;
+let serverStarted = process.env.AWS_EXECUTION_ENV || false;
 
 const done = () => {
-	!isBuilt &&
+	!serverStarted &&
 		server.listen(PORT, () => {
-			isBuilt = true;
+			serverStarted = true;
 			console.log(`Server listening on http://localhost:${PORT} in ${process.env.NODE_ENV}`);
 		});
 };
@@ -62,3 +62,4 @@ if (isDev) {
 		done();
 	});
 }
+module.exports = server;

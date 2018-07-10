@@ -1,6 +1,6 @@
 import React from 'react';
 import Content from '../../Components/Content';
-const MarkdownData = require('../../../data/post.md');
+const MarkdownData = require('../../data/post.md');
 const imagePath = require('../../assets/images/logo.svg');
 import styles from './About.css';
 import { Helmet } from 'react-helmet';
