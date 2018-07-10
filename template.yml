@@ -63,6 +63,7 @@ Resources:
                 Variables:
                     BABEL_CACHE_PATH: /tmp/babel-cache.json
                     PORT: 80
+                    NODE_ENV: development
       Events:
         ProxyApiRoot:
           Type: Api

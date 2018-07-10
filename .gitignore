@@ -1,6 +1,7 @@
 # Distribution Files
 dist/
 build/
+test/
 
 # IDE & Editors
 .idea

@@ -25,7 +25,6 @@ const binaryMimeTypes = [
   'text/text',
   'text/xml'
 ]
-console.log(server);
 const lambdaServer = awsServerlessExpress.createServer(server, null, binaryMimeTypes)
 
-exports.handler = (event, context) => awsServerlessExpress.proxy(lambdaServer, event, context)
+exports.handler = (event, context) => awsServerlessExpress.proxy(lambdaServer , event, context)
