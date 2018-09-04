@@ -8,11 +8,11 @@ const translationsDe = {
 
 const translationsEn = {
 	language: {
-		title: 'A minimal React boilerplate with Server side rendering.',
+		title: 'A minimal React boilerplate with server side rendering.',
 	},
 };
 
-const t = (lang, key, params): string => {
+const t = (lang, key, params) => {
 	const langTranslations = lang === 'de' ? translationsDe : translationsEn;
 	const translation = key
 		.split('.')

@@ -8,7 +8,7 @@ module.exports = {
 		vendor: ['react', 'react-dom'],
 		main: [
 			'react-hot-loader/patch',
-			'babel-runtime/regenerator',
+			'@babel/runtime/regenerator',
 			'webpack-hot-middleware/client?reload=true',
 			'./src/main.js',
 		],
@@ -19,14 +19,6 @@ module.exports = {
 		chunkFilename: '[name].js',
 		path: path.resolve(__dirname, '../dist'),
 		publicPath: '/',
-	},
-	devServer: {
-		contentBase: 'dist',
-		overlay: true,
-		hot: true,
-		stats: {
-			colors: true,
-		},
 	},
 	devtool: 'source-map',
 	module: {
