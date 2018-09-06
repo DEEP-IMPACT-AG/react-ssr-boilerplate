@@ -5,16 +5,17 @@ A minimal React boilerplate with support for code splitting, hot module reload a
 
 Demo: https://react-ssr-boilerplate.herokuapp.com/
 
-**It includes:**
-- Babel 7 ⚙
-- Webpack 4 📦
-- React 16.4 ⚛
-- CSS Modules 🕸
-- PostCSS 🎨
-- Express Server 🤖
-- Hot Module Replacement 🔥
-- Code Splitting ✂️
-- Server Side Rendering 🛎
+|👇|Includes|
+|:-:|:---|
+|⚙| Babel 7|
+|📦| Webpack 4|
+|⚛| React 16.5|
+|🕸| CSS Modules|
+|🎨| PostCSS|
+|🤖| Express Server|
+|🔥| Hot Module Replacement|
+|✂️| Code Splitting|
+|🛎| Server Side Rendering|
 
 ### Install dependencies
 ```
@@ -29,5 +30,5 @@ Build and open your browser to http://localhost:8080.
 
 ### Builds and runs the app in production
 ```
-> $ npm start
+> $ npm run prod
 ```
