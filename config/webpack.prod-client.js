@@ -14,7 +14,7 @@ module.exports = {
 	},
 	mode: 'production',
 	output: {
-		filename: '[name]-bundle.js',
+		filename: '[name]-bundle.[hash].js',
 		path: path.resolve(__dirname, '../dist'),
 		publicPath: '/',
 	},
@@ -60,7 +60,7 @@ module.exports = {
 				],
 			},
 			{
-				test: /\.(jpg|svg|png|gif)$/,
+				test: /\.(jpg|svg|png|ico|gif)$/,
 				use: [
 					{
 						loader: 'file-loader',
@@ -82,7 +82,7 @@ module.exports = {
 	},
 	plugins: [
 		new ExtractCssChunks({
-			filename: '[name].css',
+			filename: '[name].[contenthash].css',
 			chunkFilename: '[name]-[hash:8].css',
 		}),
 		new OptimizeCssAssetsPlugin({

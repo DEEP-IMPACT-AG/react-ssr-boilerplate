@@ -1,29 +1,22 @@
 import React, { Fragment } from 'react';
-import { Helmet } from 'react-helmet';
-import Content from '../../Components/Content';
-import styles from './NotFound.css';
-import AppearAfter from '../../Components/AppearAfter';
+import Head from '../../Components/Head';
 import { Status } from '../../Components/Status';
+import { ContentPusher, Container, Readable } from '../../Components/Layout';
+import styles from './NotFound.css';
 
 function NotFound() {
 	return (
 		<Fragment>
-			<Helmet encodeSpecialCharacters={true}>
-				<title>React SSR Boilerplate • Not Found</title>
-				<meta
-					name="description"
-					content="A minimal React boilerplate with support for code splitting, hot module reload and server side rendering."
-				/>
-			</Helmet>
+			<Head title="React SSR Boilerplate • Not Found" />
 			<Status code={404} />
-			<AppearAfter className={styles.content} delay={500}>
-				<Content>
-					<div className={styles.notFound}>
-						<h1 className={styles.title}>Not Found</h1>
-						<div>404 Error - Page not found.</div>
-					</div>
-				</Content>
-			</AppearAfter>
+			<ContentPusher>
+				<Container>
+					<Readable>
+						<h1>Not Found</h1>
+						<p>404 Error - Page not found.</p>
+					</Readable>
+				</Container>
+			</ContentPusher>
 		</Fragment>
 	);
 }

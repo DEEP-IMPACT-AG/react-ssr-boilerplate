@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import universal from 'react-universal-component';
-import { Route, Switch, Redirect } from 'react-router';
-import Nav from '../Components/Nav';
-import '../assets/css/globals.css';
+import GoogleTagManager from '../Components/GoogleTagManager';
 import Head from '../Components/Head';
-import Loading from '../Components/Loading';
+import Nav from '../Components/Nav';
+import Footer from '../Components/Footer';
+import { Route, Switch, Redirect } from 'react-router';
 import { RedirectWithStatus } from '../Components/RedirectStatus';
-import riangle from '../assets/images/riangle.svg';
+import { Loading } from '../Components/Layout';
+import '../assets/css/styles.css';
+
+const isProd = process.env.NODE_ENV === 'production';
 
 const UniversalComponent = universal(props => import(`../Views/${props.page}`), {
 	loading: () => <Loading />,
@@ -14,7 +17,8 @@ const UniversalComponent = universal(props => import(`../Views/${props.page}`), 
 });
 
 export default ({ staticContext, lang }) => (
-	<div>
+	<Fragment>
+		{isProd ? <GoogleTagManager gtmId="GTM-WFTXGC8" /> : ''}
 		<Head />
 		<Nav lang={lang} />
 		<Switch>
@@ -28,18 +32,9 @@ export default ({ staticContext, lang }) => (
 				path="/:lang/about"
 				render={routeProps => <UniversalComponent page="About" {...routeProps} />}
 			/>
-			<Route
-				exact
-				path="/:lang/article"
-				render={routeProps => <UniversalComponent page="Article" {...routeProps} />}
-			/>
 			<RedirectWithStatus status={301} exact from="/" to={`/${lang}`} />
 			<Route render={routeProps => <UniversalComponent page="NotFound" {...routeProps} />} />
 		</Switch>
-		<footer>
-			<a href="https://www.riangle.com/">
-				<img src={riangle} alt="Riangle Logo" />
-			</a>
-		</footer>
-	</div>
+		<Footer />
+	</Fragment>
 );
